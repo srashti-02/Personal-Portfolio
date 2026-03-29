@@ -543,3 +543,84 @@ footer {
     background: #ffffff;
     color: #000000 !important;
 }
+
+/* ================= MOBILE FIX ONLY ================= */
+@media (max-width: 768px) {
+
+    /* Navbar fix */
+    .nav-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        font-size: 14px;
+    }
+
+    /* Hero section fix */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 120px 20px 60px; /* top spacing for fixed navbar */
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    /* Image fix */
+    .hero-img {
+        width: 180px;
+        height: 180px;
+        margin-top: 20px;
+    }
+
+    /* Buttons fix */
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Section spacing */
+    section {
+        padding: 80px 15px;
+    }
+
+    /* Skills grid */
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Projects grid */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Contact form */
+    .contact-form {
+        padding: 20px;
+    }
+
+    /* Bottom nav spacing fix */
+    footer {
+        padding-bottom: 60px;
+    }
+}
