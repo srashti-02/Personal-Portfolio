@@ -1,70 +1,98 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - SRASHTI</title>
+
     <link rel="stylesheet" href="styles.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <nav class="navbar">
-        <!-- Same nav -->
-        <div class="nav-container">
-            <h1 class="logo">SRASHTI</h1>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <section class="contact">
-        <h2 class="fade-in">Get In Touch</h2>
-        <form class="contact-form fade-in">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
-        </form>
-       
-        <div class="social-links fade-in">
-            <a href="https://linkedin.com/in/srashti"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            <a href="https://github.com/srashti"><i class="fab fa-github"></i> GitHub</a>
-            <a href="mailto:ksrashti5@gmail.com"><i class="fas fa-envelope"></i> Email Me</a>
-        </div>
-    </section>
-    <div class="socials">
-        <a href="https://github.com/srashti-02"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/srashti-kumari-6a781228a"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.instagram.com/heyyysrishtii_"><i class="fab fa-instagram"></i></a>
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="nav-container">
+        <h1 class="logo">SRASHTI</h1>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</nav>
 
-    <script>
-        (function () {
-            emailjs.init("YOUR_PUBLIC_KEY"); // replace this
-        })();
-    </script>
+<!-- Contact Section -->
+<section class="contact">
+    <h2 class="fade-in">Get In Touch</h2>
 
-    <footer>
-        <div class="bottom-nav">
-            <a href="index.html"><i class="fas fa-home"></i></a>
-            <a href="about.html"><i class="fas fa-user"></i></a>
-            <a href="skills.html"><i class="fas fa-cogs"></i></a>
-            <a href="projects.html"><i class="fas fa-laptop"></i></a>
-            <a href="contact.html"><i class="fas fa-envelope"></i></a>
-        </div>
-        <p>&copy; 2026 Srashti Kumari. All rights reserved.</p>
-    </footer>
+    <form id="contact-form" class="contact-form fade-in">
+        <input type="text" name="user_name" placeholder="Your Name" required>
+        <input type="email" name="user_email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
 
-    <script src="script.js"></script>
+        <button type="submit">
+            <i class="fas fa-paper-plane"></i> Send Message
+        </button>
+    </form>
+
+    <!-- Social Links -->
+    <div class="social-links fade-in">
+        <a href="https://www.linkedin.com/in/srashti-kumari-6a781228a"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/srashti-02"><i class="fab fa-github"></i> GitHub</a>
+        <a href="mailto:ksrashti5@gmail.com"><i class="fas fa-envelope"></i> Email Me</a>
+    </div>
+</section>
+
+<!-- Social Icons -->
+<div class="socials">
+    <a href="https://github.com/srashti-02"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/srashti-kumari-6a781228a"><i class="fab fa-linkedin"></i></a>
+    <a href="https://www.instagram.com/heyyysrishtii_"><i class="fab fa-instagram"></i></a>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="bottom-nav">
+        <a href="index.html"><i class="fas fa-home"></i></a>
+        <a href="about.html"><i class="fas fa-user"></i></a>
+        <a href="skills.html"><i class="fas fa-cogs"></i></a>
+        <a href="projects.html"><i class="fas fa-laptop"></i></a>
+        <a href="contact.html"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p>&copy; 2026 Srashti Kumari. All rights reserved.</p>
+</footer>
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function () {
+    emailjs.init("H8s9VKqIkHKpcbQXV"); // 🔴 replace
+})();
+
+// Send Email
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm("service_e9fg7qe", "template_xhk6wtt", this)
+        .then(() => {
+            alert("✅ Message sent successfully!");
+            this.reset();
+        }, (error) => {
+            alert("❌ Failed to send message. Try again.");
+            console.log(error);
+        });
+});
+</script>
+
+<script src="script.js"></script>
+
 </body>
-
 </html>
