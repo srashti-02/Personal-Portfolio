@@ -525,7 +525,7 @@ footer {
     padding: 10px 20px;
     border-radius: 8px;
     background: #222;
-    color: #ffffff !important;  /* FIX BLUE/PURPLE */
+    color: #ffffff !important;  
     text-decoration: none;
     transition: 0.3s;
     display: flex;
@@ -561,11 +561,10 @@ footer {
         font-size: 14px;
     }
 
-    /* Hero section fix */
     .hero {
         flex-direction: column;
         text-align: center;
-        padding: 120px 20px 60px; /* top spacing for fixed navbar */
+        padding: 120px 20px 60px; 
     }
 
     .hero-content {
@@ -581,14 +580,12 @@ footer {
         padding: 0 10px;
     }
 
-    /* Image fix */
     .hero-img {
         width: 180px;
         height: 180px;
         margin-top: 20px;
     }
 
-    /* Buttons fix */
     .buttons {
         flex-direction: column;
         gap: 10px;
@@ -598,29 +595,40 @@ footer {
         width: 100%;
         text-align: center;
     }
-
-    /* Section spacing */
     section {
         padding: 80px 15px;
     }
-
-    /* Skills grid */
     .skills-grid {
         grid-template-columns: 1fr;
     }
-
-    /* Projects grid */
     .projects-grid {
         grid-template-columns: 1fr;
     }
-
-    /* Contact form */
     .contact-form {
         padding: 20px;
     }
-
-    /* Bottom nav spacing fix */
     footer {
         padding-bottom: 60px;
+    }
+}
+@media (max-width: 768px) {
+    .contact-form {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .contact-form button {
+        width: 100%;
+    }
+
+    .social-links {
+        flex-direction: column;
+        gap: 10px;
     }
 }
